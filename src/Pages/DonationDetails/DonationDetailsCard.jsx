@@ -1,10 +1,71 @@
 /* eslint-disable react/prop-types */
 
+// import { useState } from "react";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const DonationDetailsCard = ({ donationDetails }) => {
     // console.log(donationDetails);
 
     const { id, image, title, button_bg, description, price } = donationDetails || {};
+
+    const handleAppliedDonation = () => {
+
+        const getMyAppliedDonation = JSON.parse(localStorage.getItem("applied-donation"));
+
+        const addToDonationStorage = [];
+
+        if (!getMyAppliedDonation) {
+            addToDonationStorage.push(donationDetails);
+            localStorage.setItem("applied-donation", JSON.stringify(addToDonationStorage));
+            toast.success('Successfully applied the donation. Thank you.', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+
+        else {
+            const isExistDonationInLS = getMyAppliedDonation.find(item => item.id === parseInt(id));
+
+            if (!isExistDonationInLS) {
+                addToDonationStorage.push(...getMyAppliedDonation, donationDetails);
+                localStorage.setItem("applied-donation", JSON.stringify(addToDonationStorage));
+                toast.success('Donation added, Thank you', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            }
+            else{
+                toast.error('You have already donated', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
+            }
+        }
+
+
+
+    }
 
 
     return (
@@ -17,8 +78,8 @@ const DonationDetailsCard = ({ donationDetails }) => {
                         alt=""
                         className="w-full"
                     />
-                    <div style={{backgroundColor: "rgba(11, 11, 11, 0.70)", padding: "12px"}}>
-                        <button
+                    <div style={{ backgroundColor: "rgba(11, 11, 11, 0.70)", padding: "12px" }}>
+                        <button onClick={handleAppliedDonation}
                             style={{ backgroundColor: button_bg }}
                             className="p-2 text-white rounded-lg">
                             Donate ${price}
@@ -35,6 +96,7 @@ const DonationDetailsCard = ({ donationDetails }) => {
                 </div>
             </div>
             {/* Donation details blog ends */}
+            <ToastContainer />
         </div>
     );
 };
