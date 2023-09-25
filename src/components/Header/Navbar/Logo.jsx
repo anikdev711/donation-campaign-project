@@ -8,6 +8,7 @@ const Logo = () => {
             </div>
             <div>
                 <img src="/public/donation.png" alt="" />
+                <br />
                 <img src="/public/campaign.png" alt="" />
             </div>
         </div>
