@@ -41,7 +41,7 @@ const Donation = () => {
                     </div>
             }
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mt-20 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2 mt-20 mb-16">
                 {
                     isDataShow ? myDonation.map(appliedDonations =>
                         <DonationCard key={appliedDonations.id} appliedDonations={appliedDonations}></DonationCard>)

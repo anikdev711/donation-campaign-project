@@ -12,7 +12,7 @@ const DonationCard = ({ appliedDonations }) => {
         <div>
             <div
                 style={{ backgroundColor: card_bg }}
-                className="relative flex w-full max-w-[48rem] flex-row rounded-xl shadow-md">
+                className="relative flex w-96 lg:w-auto flex-row rounded-xl shadow-md ml-5 md:ml-48 lg:ml-2 ">
                 <div className="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700">
                     <img
                         src={image}

@@ -66,9 +66,9 @@ const Statistics = () => {
     ];
 
     return (
-        <div className="-ml-40 md:-ml-40 lg:ml-60">
+        <div className="flex justify-center items-center max-w-6xl mx-auto">
 
-            <PieChart width={730} height={400}>
+            <PieChart width={425} height={425}>
 
                 <Pie
                     data={donationData}
@@ -76,13 +76,14 @@ const Statistics = () => {
                     nameKey="name"
                     cx="50%"
                     cy="50%"
-                    outerRadius={70}
+                    outerRadius={50}
                     fill="#00C49F"
                     label={({ name, percent }) => `${name} ${(percent * 100).toFixed(1)}%`}
                 >
                     {
                         donationData.map((entry, index) => (<Cell key={index} fill={entry.color} />))
                     }
+                    
 
                 </Pie>
 

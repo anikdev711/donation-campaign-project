@@ -18,27 +18,27 @@ const DonationsCard = ({ donation, matchCategory }) => {
     const [displayCategoryDonations, setDisplayCategoryDonations] = useState([]);
 
     useEffect(() => {
-        if (matchCategory === "health") {
+        if (matchCategory === "Health") {
             // console.log('matched');
-            const healthDonations = allDonations.filter(item => item.category === matchCategory);
+            const healthDonations = allDonations.filter(item => item.category === "Health");
             // console.log(healthDonations);
             setDisplayCategoryDonations(healthDonations);
             // console.log(displayCategoryDonations);
         }
-        else if (matchCategory === "education") {
-            const educationDonations = allDonations.filter(item => item.category === matchCategory);
+        else if (matchCategory === "Education") {
+            const educationDonations = allDonations.filter(item => item.category === "Education");
             setDisplayCategoryDonations(educationDonations);
             // console.log(educationDonations);
         }
-        else if (matchCategory === "food") {
-            const foodDonations = allDonations.filter(item => item.category === matchCategory);
+        else if (matchCategory === "Clothing") {
+            const clothingDonations = allDonations.filter(item => item.category === "Clothing");
             // console.log(foodDonations);
-            setDisplayCategoryDonations(foodDonations);
-        }
-        else if (matchCategory === "clothing") {
-            const clothingDonations = allDonations.filter(item => item.category === matchCategory);
-            // console.log(clothingDonations);
             setDisplayCategoryDonations(clothingDonations);
+        }
+        else if (matchCategory === "Food") {
+            const foodDonations = allDonations.filter(item => item.category === "Food");
+            // console.log(clothingDonations);
+            setDisplayCategoryDonations(foodDonations);
         }
         // else if (matchCategory !== 'health' || matchCategory !== 'education' || matchCategory !== 'food' || matchCategory !== 'clothing') {
             // console.log('not matched');
@@ -68,7 +68,7 @@ const DonationsCard = ({ donation, matchCategory }) => {
         <div>
             <div>
                 <Link to={`/donationdetails/${id}`}>
-                    <div className="w-72 border rounded-lg shadow" style={{ backgroundColor: card_bg }}>
+                    <div className="w-72 ml-16 md:ml-10 lg:ml-1 border rounded-lg shadow" style={{ backgroundColor: card_bg }}>
                         <img className="rounded-t-lg" src={image} alt="" />
                         <div className="p-5">
                             <button style={{ color: text_color, backgroundColor: category_bg, paddingLeft: "12px", paddingRight: "12px", borderRadius: "8px" }}>{category}</button>
@@ -80,7 +80,7 @@ const DonationsCard = ({ donation, matchCategory }) => {
 
             {/* matched category starts  */}
 
-            <div>
+            <div className="lg:max-w-6xl lg:mx-auto">
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
@@ -89,7 +89,7 @@ const DonationsCard = ({ donation, matchCategory }) => {
 
                             <div key={matter.id}>
                                 <Link to={`/donationdetails/${matter.id}`}>
-                                    <div className="w-72 border rounded-lg shadow" style={{ backgroundColor: matter.card_bg }}>
+                                    <div className="w-72 ml-16 md:ml-10 lg:ml-8 border rounded-lg shadow" style={{ backgroundColor: matter.card_bg }}>
                                         <img className="rounded-t-lg" src={matter.image} alt="" />
                                         <div className="p-5">
                                             <button style={{ color: matter.text_color, backgroundColor: matter.category_bg, paddingLeft: "12px", paddingRight: "12px", borderRadius: "8px" }}>{matter.category}</button>

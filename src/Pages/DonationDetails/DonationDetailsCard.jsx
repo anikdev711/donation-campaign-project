@@ -78,7 +78,7 @@ const DonationDetailsCard = ({ donationDetails }) => {
         <div>
             {/* <h1>{displayCategoryDonations}</h1> */}
             {/* Donation details blog starts  */}
-            <div key={id} className="relative flex max-w-7xl flex-col bg-white shadow-md mt-8 mb-28">
+            <div key={id} className="relative flex max-w-6xl mx-auto flex-col bg-white shadow-md mt-8 mb-28">
                 <div className="relative m-0 overflow-hidden rounded-none bg-transparent bg-clip-border text-gray-700 shadow-none">
                     <img
                         src={image}
