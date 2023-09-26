@@ -7,11 +7,11 @@ const MainLayout = () => {
     return (
         <div>
 
-            <div className="max-w-7xl mx-auto">
+            <div className="lg:max-w-7xl mx-auto">
                 <Navbar></Navbar>
             </div>
 
-            <div className="max-w-7xl mx-auto">
+            <div className="lg:max-w-7xl mx-auto">
                 <Outlet></Outlet>
             </div>
 

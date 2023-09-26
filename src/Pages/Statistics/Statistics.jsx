@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
+import { Cell, Legend, Pie, PieChart } from "recharts";
 // import { Pie } from 'react-chartjs-2';
 // import { data } from "autoprefixer";
 
@@ -86,10 +86,7 @@ const Statistics = () => {
 
                 </Pie>
 
-                <Tooltip></Tooltip>
                 <Legend></Legend>
-
-
 
             </PieChart>
 

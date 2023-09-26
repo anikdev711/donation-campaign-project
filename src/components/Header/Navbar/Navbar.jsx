@@ -6,8 +6,10 @@ const Navbar = () => {
     return (
         <div>
             <nav className="flex justify-between items-center">
-                <Logo></Logo>
-                <ul className="flex gap-4">
+                <div>
+                    <Logo></Logo>
+                </div>
+                <ul className="flex flex-col md:flex-row lg:flex-row gap-4">
                     <li>
                         <NavLink
                             to="/"
@@ -35,7 +37,7 @@ const Navbar = () => {
                                 isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
                             }
                         >
-                            Statistics 
+                            Statistics
                         </NavLink>
                     </li>
                 </ul>

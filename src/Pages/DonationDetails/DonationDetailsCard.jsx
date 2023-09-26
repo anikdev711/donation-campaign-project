@@ -2,14 +2,21 @@
 
 // import { useState } from "react";
 
+// import { useContext } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// import { DonationCategories } from '../../components/Donations/DonationsCard';
 
 
 const DonationDetailsCard = ({ donationDetails }) => {
     // console.log(donationDetails);
+    // console.log(displayCategoryDonations);
 
     const { id, image, title, button_bg, description, price } = donationDetails || {};
+
+    // const displayCategoryDonations = useContext(DonationCategories);
+    // console.log(displayCategoryDonations);
+
 
     const handleAppliedDonation = () => {
 
@@ -67,9 +74,9 @@ const DonationDetailsCard = ({ donationDetails }) => {
 
     }
 
-
     return (
         <div>
+            {/* <h1>{displayCategoryDonations}</h1> */}
             {/* Donation details blog starts  */}
             <div key={id} className="relative flex max-w-7xl flex-col bg-white shadow-md mt-8 mb-28">
                 <div className="relative m-0 overflow-hidden rounded-none bg-transparent bg-clip-border text-gray-700 shadow-none">
