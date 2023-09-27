@@ -3,10 +3,9 @@
 
 import { Link } from "react-router-dom";
 
-
 const DonationCard = ({ appliedDonations }) => {
     // console.log(appliedDonations);
-    const { id, image, category, title, category_bg, card_bg, text_color, button_bg,  price } = appliedDonations || {};
+    const { id, image, category, title, category_bg, card_bg, text_color, button_bg, price } = appliedDonations || {};
 
     return (
         <div>
@@ -22,7 +21,9 @@ const DonationCard = ({ appliedDonations }) => {
                 </div>
                 <div className="p-6">
 
-                    <button style={{ color: text_color, backgroundColor: category_bg, paddingLeft: "12px", paddingRight: "12px", borderRadius: "8px" }}>{category}</button>
+                    <button
+                        style={{ color: text_color, backgroundColor: category_bg, paddingLeft: "12px", paddingRight: "12px", borderRadius: "8px" }}
+                        className="text-sm font-normal">{category}</button>
 
                     <h4
                         className="mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
@@ -30,14 +31,14 @@ const DonationCard = ({ appliedDonations }) => {
                     </h4>
                     <p
                         style={{ color: text_color }}
-                        className="mb-8 block font-sans font-bold text-base leading-relaxed text-gray-700 antialiased">
+                        className="mb-8 block font-sans font-semibold text-xl leading-relaxed antialiased">
                         ${price}
                     </p>
                     <Link to={`/donationdetails/${id}`}>
 
                         <button
                             style={{ backgroundColor: button_bg }}
-                            className="text-white p-4 rounded-lg">
+                            className="text-white text-lg font-semibold p-4 rounded-lg">
                             View Details
                         </button>
 

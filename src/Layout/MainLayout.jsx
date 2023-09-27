@@ -7,11 +7,11 @@ const MainLayout = () => {
     return (
         <div>
 
-            <div className="">
+            <div>
                 <Navbar></Navbar>
             </div>
 
-            <div className="">
+            <div>
                 <Outlet></Outlet>
             </div>
 

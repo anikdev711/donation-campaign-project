@@ -4,12 +4,12 @@ const Logo = () => {
     return (
         <div className="flex gap-4">
             <div>
-                <img src="/public/logo.png" alt="" />
+                <img src="/logo.png" alt="" />
             </div>
             <div>
-                <img src="/public/donation.png" alt="" />
+                <img src="/donation.png" alt="" />
                 <br />
-                <img src="/public/campaign.png" alt="" />
+                <img src="/campaign.png" alt="" />
             </div>
         </div>
     );

@@ -1,22 +1,13 @@
 /* eslint-disable react/prop-types */
-
 // import { useState } from "react";
-
 // import { useContext } from 'react';
+// import { DonationCategories } from '../../components/Donations/DonationsCard';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { DonationCategories } from '../../components/Donations/DonationsCard';
-
 
 const DonationDetailsCard = ({ donationDetails }) => {
-    // console.log(donationDetails);
-    // console.log(displayCategoryDonations);
-
+    
     const { id, image, title, button_bg, description, price } = donationDetails || {};
-
-    // const displayCategoryDonations = useContext(DonationCategories);
-    // console.log(displayCategoryDonations);
-
 
     const handleAppliedDonation = () => {
 
@@ -70,13 +61,11 @@ const DonationDetailsCard = ({ donationDetails }) => {
             }
         }
 
-
-
     }
 
     return (
         <div>
-            {/* <h1>{displayCategoryDonations}</h1> */}
+        
             {/* Donation details blog starts  */}
             <div key={id} className="relative flex max-w-6xl mx-auto flex-col bg-white shadow-md mt-8 mb-28">
                 <div className="relative m-0 overflow-hidden rounded-none bg-transparent bg-clip-border text-gray-700 shadow-none">
@@ -88,16 +77,16 @@ const DonationDetailsCard = ({ donationDetails }) => {
                     <div style={{ backgroundColor: "rgba(11, 11, 11, 0.70)", padding: "12px" }}>
                         <button onClick={handleAppliedDonation}
                             style={{ backgroundColor: button_bg }}
-                            className="p-2 text-white rounded-lg">
+                            className="p-2 text-white text-xl font-semibold rounded-lg">
                             Donate ${price}
                         </button>
                     </div>
                 </div>
-                <div className="p-6 mt-14">
-                    <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                <div className="p-6 mt-10">
+                    <h4 className="block font-sans text-4xl font-bold mb-6 leading-snug tracking-normal text-blue-gray-900 antialiased">
                         {title}
                     </h4>
-                    <p className="mt-3 block font-sans text-xl font-normal leading-relaxed text-gray-700 antialiased">
+                    <p className="block font-sans text-xl font-normal leading-relaxed text-gray-700 antialiased">
                         {description}
                     </p>
                 </div>

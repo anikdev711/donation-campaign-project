@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import DonationCard from "./DonationCard";
 
-
 const Donation = () => {
     const [myDonation, setMyDonation] = useState([]);
     const [noDataFound, setNoDataFound] = useState(false);
     const [isDataShow, setIsDataShow] = useState(false);
-    // const [totalDonation, setTotalDonation] = useState(0);
-
+    
     useEffect(() => {
         const getDataFromLs = JSON.parse(localStorage.getItem("applied-donation"));
         if (getDataFromLs) {
@@ -50,8 +48,8 @@ const Donation = () => {
             </div>
 
             {
-                myDonation.length > 4 && <button onClick={() => setIsDataShow(!isDataShow)} className="bg-[#009444] text-white font-bold p-3 rounded-lg mx-auto block mt-10 mb-36">
-                    {isDataShow ? "Show Less" : "Show All"}
+                myDonation.length > 4 && <button onClick={() => setIsDataShow(!isDataShow)} className="bg-[#009444] text-white text-base font-bold p-3 rounded-lg mx-auto block mt-10 mb-36">
+                    {isDataShow ? "See less" : "See All"}
                 </button>
             }
 
